@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+  }
+  
+  .logo-img {
+    height: 150px;
+    width: 150px;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-left: 15px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-left: 200px;
+  }
+  
