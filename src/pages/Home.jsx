@@ -1,5 +1,6 @@
 import React from "react";
 import "../static/css/pages.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -28,8 +29,10 @@ function Home() {
               To contribute and add your first recipe, click the button "Create
               recipe" below
             </p>
-            <div class="button-container">
-              <button class="button">Create recipe</button>
+            <div className="button-container">
+              <Link to="/create-recipe" className="button">
+                Create recipe
+              </Link>
             </div>
           </div>
         </section>

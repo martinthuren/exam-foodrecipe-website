@@ -1,5 +1,4 @@
 import React from "react";
-import "../static/css/pages.css";
 
 function About() {
   return (
