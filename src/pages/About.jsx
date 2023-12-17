@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import "../static/css/about.css";
->>>>>>> dev
 
 function About() {
   return (
