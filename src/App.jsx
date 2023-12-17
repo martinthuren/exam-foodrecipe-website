@@ -11,7 +11,7 @@ function App() {
       <div className="pt-20">
         <Navbar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/recipe" element={<Recipe />} />
         </Routes>

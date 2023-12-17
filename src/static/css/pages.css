@@ -5,8 +5,8 @@ body, h1, p {
   
   header {
     margin-top: 120px;
-    background-color: #91d8d2;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 5px 0;
   }

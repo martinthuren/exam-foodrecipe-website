@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <Link to="/home">
+        <Link to="/">
           <img
             src="logo2.png"
             width="150"
