@@ -3,15 +3,15 @@ import "../static/css/create-recipe.css";
 import { useState } from "react";
 
 function CreateRecipe() {
-  const [number1, setNumber1] = useState("");
-  const [number2, setNumber2] = useState("");
+  const [hours, setHours] = useState("");
+  const [minutes, setMinutes] = useState("");
 
-  const handleNumber1Change = (event) => {
-    setNumber1(event.target.value);
+  const handleHoursChange = (event) => {
+    setHours(event.target.value);
   };
 
-  const handleNumber2Change = (event) => {
-    setNumber2(event.target.value);
+  const handleMinutesToChange = (event) => {
+    setMinutes(event.target.value);
   };
 
   const options = [];
@@ -50,25 +50,25 @@ function CreateRecipe() {
         <br />
         <label htmlFor="cooktime">Cooktime: </label>
         <select
-          id="number1"
-          name="number1"
-          value={number1}
-          onChange={handleNumber1Change}
+          id="hours"
+          name="hours"
+          value={hours}
+          onChange={handleHoursChange}
         >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <label htmlFor="number1"> hour(s) and </label>
+        <label htmlFor="minutes"> hour(s) and </label>
         <select
-          id="number2"
-          name="number2"
-          value={number2}
-          onChange={handleNumber2Change}
+          id="minutes"
+          name="minutes"
+          value={minutes}
+          onChange={handleMinutesToChange}
         >
           {options}
         </select>
-        <label htmlFor="number2">minutes</label>
+        <label htmlFor="minutes">minutes</label>
         <br />
         <input type="submit" value="Submit" />
       </form>
