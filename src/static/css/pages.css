@@ -1,8 +1,62 @@
-.headliner {
-    font-size: 1.5rem;
-    font-weight: 700;
+body, h1, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    margin-top: 120px;
+    background-color: #91d8d2;
+    color: white;
     text-align: center;
+    padding: 5px 0;
+  }
+  
+  .main {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 100px;
-
-}
+    margin-top: 50px;
+  }
+  
+  .image-container {
+    margin-right: 20px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .paragraph-container {
+    max-width: 400px;
+  }
+  
+  .paragraph-container p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .logo-homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-left: 200px;
+  }
+  
+  .button-container {
+    margin-top: 20px; 
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Example background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
