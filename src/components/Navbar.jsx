@@ -21,7 +21,7 @@ function Navbar() {
       <div className="nav-links">
         <ul>
           <li>
-            <Link to="/recipe">Recipe</Link>
+            <Link to="/recipe">Show all recipes</Link>
           </li>
           <li>
             <Link to="/about">About Us</Link>
