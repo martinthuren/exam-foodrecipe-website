@@ -3,10 +3,12 @@
 
 
 .recipeContainer {
+    margin-top: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: darkgray;
+    background-color: #242424;
+    color: white;
   }
   
   .recipes {

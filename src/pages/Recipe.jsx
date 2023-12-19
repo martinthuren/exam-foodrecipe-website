@@ -22,7 +22,6 @@ function Recipe() {
   return (
     <>
       <div>
-        <h1>Show all recipes</h1>
         <div className="recipeContainer">
           <div className="recipes">
             {dataFromServer.map((recipe) => (
