@@ -1,0 +1,33 @@
+
+
+
+
+.recipeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darkgray;
+  }
+  
+  .recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .recipeCard {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  /* Add this CSS to your existing stylesheet */
+  .recipeImage img {
+    width: 230px; 
+    height: 230px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+  }
+  
