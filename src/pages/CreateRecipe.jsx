@@ -1,76 +1,113 @@
-import React from "react";
+import React, { useState } from "react";
+import facade from "../util/apiFacade";
 import "../static/css/create-recipe.css";
-import { useState } from "react";
 
 function CreateRecipe() {
-  const [hours, setHours] = useState("");
-  const [minutes, setMinutes] = useState("");
+  const [recipeData, setRecipeData] = useState({
+    recipeName: "",
+    recipeImg: "",
+    recipeDescription: "",
+    recipeType: "",
+    recipePreptime: 0,
+    recipeIngredients: "",
+    recipeDirections: "",
+  });
 
-  const handleHoursChange = (event) => {
-    setHours(event.target.value);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setRecipeData({
+      ...recipeData,
+      [name]: value,
+    });
   };
 
-  const handleMinutesToChange = (event) => {
-    setMinutes(event.target.value);
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const options = [];
-  for (let i = 1; i <= 59; i++) {
-    options.push(
-      <option key={i} value={i}>
-        {i}
-      </option>
-    );
-  }
+    facade
+      .createRecipe(recipeData)
+      .then((createdRecipe) => {
+        console.log("New recipe created:", createdRecipe);
+        setRecipeData({
+          recipeName: "",
+          recipeImg: "",
+          recipeDescription: "",
+          recipeType: "",
+          recipePreptime: 0,
+          recipeIngredients: "",
+          recipeDirections: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error creating recipe:", error);
+        // Handle error if creation fails
+      });
+  };
 
   return (
-    <div className="header">
-      <div>
-        <h1>Create recipe</h1>
-        <p>
-          Please fill out the information below for your recipe, and click
-          submit when you are finished
-        </p>
-      </div>
-      <form>
-        <label htmlFor="name">Name of recipe:</label>
-        <input type="text" id="name" name="name" />
-        <br />
-        <label htmlFor="description">Description:</label>
-        <input type="text" id="description" name="description" />
-        <br />
-        <label htmlFor="instructions">Instructions:</label>
-        <input type="text" id="instructions" name="instructions" />
-        <br />
-        <label htmlFor="ingredients">Ingredients:</label>
-        <input type="text" id="ingredients" name="ingredients" />
-        <br />
-        <label htmlFor="preptime">Preptime:</label>
-        <input type="text" id="preptime" name="preptime" />
-        <br />
-        <label htmlFor="cooktime">Cooktime: </label>
+    <div className="createRecipeContainer">
+      <h2>Create New Recipe</h2>
+      <form className="createRecipeForm" onSubmit={handleSubmit}>
+        <label>Recipe Name:</label>
+        <input
+          type="text"
+          name="recipeName"
+          value={recipeData.recipeName}
+          onChange={handleInputChange}
+          required
+        />
+        <label>Recipe Image:</label>
+        <input
+          type="text"
+          name="recipeImg"
+          value={recipeData.recipeImg}
+          onChange={handleInputChange}
+          required
+        />
+        <label>Recipe Description:</label>
+        <textarea
+          name="recipeDescription"
+          value={recipeData.recipeDescription}
+          onChange={handleInputChange}
+          required
+        ></textarea>
+        <label>Recipe Type:</label>
         <select
-          id="hours"
-          name="hours"
-          value={hours}
-          onChange={handleHoursChange}
+          name="recipeType"
+          value={recipeData.recipeType}
+          onChange={handleInputChange}
+          required
         >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
+          <option value="">Select a recipe type</option>
+          <option value="BREAKFAST">Breakfast</option>
+          <option value="LUNCH">Lunch</option>
+          <option value="DINNER">Dinner</option>
+          <option value="SNACK">Snack</option>
+          <option value="DESSERT">Dessert</option>
         </select>
-        <label htmlFor="minutes"> hour(s) and </label>
-        <select
-          id="minutes"
-          name="minutes"
-          value={minutes}
-          onChange={handleMinutesToChange}
-        >
-          {options}
-        </select>
-        <label htmlFor="minutes">minutes</label>
-        <br />
-        <input type="submit" value="Submit" />
+        <label>Recipe Prep Time:</label>
+        <input
+          type="number"
+          name="recipePreptime"
+          value={recipeData.recipePreptime}
+          onChange={handleInputChange}
+          required
+        />
+        <label>Recipe Ingredients:</label>
+        <textarea
+          name="recipeIngredients"
+          value={recipeData.recipeIngredients}
+          onChange={handleInputChange}
+          required
+        ></textarea>
+        <label>Recipe Directions:</label>
+        <textarea
+          name="recipeDirections"
+          value={recipeData.recipeDirections}
+          onChange={handleInputChange}
+          required
+        ></textarea>
+        <button type="submit">Create Recipe</button>
       </form>
     </div>
   );
