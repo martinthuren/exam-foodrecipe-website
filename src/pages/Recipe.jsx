@@ -5,9 +5,13 @@ import facade from "../util/apiFacade";
 
 function Recipe() {
   const [dataFromServer, setDataFromServer] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   useEffect(() => {
-    facade.fetchData("recipes", "GET").then((data) => setDataFromServer(data));
+    facade.fetchData("recipes", "GET").then((data) => {
+      setDataFromServer(data);
+      setFilteredRecipes(data); // Initialize filtered recipes with all data
+    });
   }, []);
 
   const handleDelete = (id) => {
@@ -21,10 +25,30 @@ function Recipe() {
       });
   };
 
+  const handleFilter = (type) => {
+    if (type === "ALL") {
+      setFilteredRecipes(dataFromServer); // Reset to display all recipes
+    } else {
+      const filtered = dataFromServer.filter(
+        (recipe) => recipe.recipeType === type
+      );
+      setFilteredRecipes(filtered);
+    }
+  };
+
   return (
     <div className="recipeContainer">
+      <div className="filterButtons">
+        <button onClick={() => handleFilter("ALL")}>All</button>
+        <button onClick={() => handleFilter("BREAKFAST")}>Breakfast</button>
+        <button onClick={() => handleFilter("LUNCH")}>Lunch</button>
+        <button onClick={() => handleFilter("DINNER")}>Dinner</button>
+        <button onClick={() => handleFilter("DESSERT")}>Dessert</button>
+        <button onClick={() => handleFilter("SNACK")}>Snack</button>
+        <button onClick={() => handleFilter("DRINK")}>Drink</button>
+      </div>
       <div className="recipes">
-        {dataFromServer.map((recipe) => (
+        {filteredRecipes.map((recipe) => (
           <div className="recipeCard" key={recipe.id}>
             <p>{recipe.recipeName}</p>
             <Link to={`/recipe/${recipe.id}`}>
