@@ -4,14 +4,47 @@ import facade from "../util/apiFacade";
 
 function Recipe() {
   const [dataFromServer, setDataFromServer] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   useEffect(() => {
-    facade.fetchData("recipes", "GET").then((data) => setDataFromServer(data));
+    fetchData();
   }, []);
 
+  const fetchData = () => {
+    facade.fetchData("recipes", "GET").then((data) => setDataFromServer(data));
+  };
+
   const handleUpdate = (id) => {
-    // Handle the update logic here using the recipe ID
-    console.log(`Update recipe with ID: ${recipe.id}`);
+    const recipeToUpdate = dataFromServer.find((recipe) => recipe.id === id);
+    setSelectedRecipe(recipeToUpdate);
+  };
+
+  const updateRecipe = (updatedRecipe) => {
+    facade
+      .fetchData(`recipes/${updatedRecipe.id}`, "PUT", updatedRecipe)
+      .then((response) => {
+        const updatedRecipes = dataFromServer.map((recipe) =>
+          recipe.id === updatedRecipe.id ? { ...updatedRecipe } : recipe
+        );
+        setDataFromServer(updatedRecipes); // Update the state after receiving the updated response
+        setSelectedRecipe(null);
+      })
+      .catch((error) => {
+        console.error(
+          `Error updating recipe with ID ${updatedRecipe.id}:`,
+          error
+        );
+      });
+  };
+
+  const handleSave = () => {
+    if (selectedRecipe) {
+      updateRecipe(selectedRecipe);
+    }
+  };
+
+  const handleCancel = () => {
+    setSelectedRecipe(null);
   };
 
   const handleDelete = (id) => {
@@ -66,6 +99,36 @@ function Recipe() {
           </div>
         </div>
       </div>
+      {selectedRecipe && (
+        <div className="editForm">
+          <h2>Edit Recipe</h2>
+          <label>Recipe Name:</label>
+          <input
+            type="text"
+            value={selectedRecipe.recipeName}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipeName: e.target.value,
+              })
+            }
+          />
+          <label>Recipe Description:</label>
+          <input
+            type="text"
+            value={selectedRecipe.recipeDescription}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipeDescription: e.target.value,
+              })
+            }
+          />
+          {/* Add other input fields for editing other recipe details */}
+          <button onClick={handleSave}>Save</button>
+          <button onClick={handleCancel}>Cancel</button>
+        </div>
+      )}
     </>
   );
 }
