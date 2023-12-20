@@ -24,9 +24,9 @@ function Recipe() {
       .fetchData(`recipes/${updatedRecipe.id}`, "PUT", updatedRecipe)
       .then((response) => {
         const updatedRecipes = dataFromServer.map((recipe) =>
-          recipe.id === updatedRecipe.id ? { ...updatedRecipe } : recipe
+          recipe.id === updatedRecipe.id ? response : recipe
         );
-        setDataFromServer(updatedRecipes); // Update the state after receiving the updated response
+        setDataFromServer(updatedRecipes);
         setSelectedRecipe(null);
       })
       .catch((error) => {
@@ -121,6 +121,61 @@ function Recipe() {
               setSelectedRecipe({
                 ...selectedRecipe,
                 recipeDescription: e.target.value,
+              })
+            }
+          />
+          <label>Recipe Image:</label>
+          <input
+            type="text"
+            value={selectedRecipe.recipeImg}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipeImg: e.target.value,
+              })
+            }
+          />
+          <label>Recipe Type:</label>
+          <input
+            type="text"
+            value={selectedRecipe.recipeType}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipeType: e.target.value,
+              })
+            }
+          />
+          <label>Recipe Prep Time:</label>
+          <input
+            type="number"
+            value={selectedRecipe.recipePreptime}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipePreptime: e.target.value,
+              })
+            }
+          />
+          <label>Recipe Ingredients:</label>
+          <input
+            type="text"
+            value={selectedRecipe.recipeIngredients}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipeIngredients: e.target.value,
+              })
+            }
+          />
+          <label>Recipe Directions:</label>
+          <input
+            type="text"
+            value={selectedRecipe.recipeDirections}
+            onChange={(e) =>
+              setSelectedRecipe({
+                ...selectedRecipe,
+                recipeDirections: e.target.value,
               })
             }
           />
