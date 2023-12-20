@@ -1,5 +1,5 @@
 const URL = 'http://localhost:7070/api/v1/';
-const HOTEL_ROUTE = "recipes"; // Assuming this is the correct endpoint for creating recipes
+const HOTEL_ROUTE = "recipes"; 
 
 function apiFacade() {
   const setToken = (token) => {
@@ -43,10 +43,9 @@ function apiFacade() {
   };
 
   const createRecipe = (recipeData) => {
-    const options = makeOptions("POST", recipeData, true); // Assuming recipeData is formatted correctly
+    const options = makeOptions("POST", recipeData, true); 
     return fetch(URL + HOTEL_ROUTE, options).then(handleHttpErrors);
-    // Replace HOTEL_ROUTE with the correct endpoint for creating a recipe
-    // Adjust the payload and endpoint according to your backend API
+
   };
 
   return {
@@ -54,7 +53,7 @@ function apiFacade() {
     setToken,
     getToken,
     fetchData,
-    createRecipe, // Add the createRecipe method to the returned object
+    createRecipe, 
   };
 }
 
