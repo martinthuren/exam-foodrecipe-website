@@ -16,12 +16,6 @@ function apiFacade()
         return localStorage.getItem('jwtToken')
     }
 
-    const logout = (callback) =>
-    {
-        localStorage.removeItem('jwtToken')
-        callback(false)
-    }
-
     const handleHttpErrors = (res) =>
     {
 
@@ -30,33 +24,6 @@ function apiFacade()
             return Promise.reject({ status: res.status, fullError: res.json() })
         }
         return res.json()
-    }
-
-    const login = (user, password, callback) =>
-    {
-        console.log("Jeg er fanget inde i login funktionen", user, password)
-
-        const payload = { username: user, password: password }
-
-        const options = makeOptions("POST", payload)
-
-        return fetch(URL + AUTHENTICATION_ROUTE, options)
-            .then(handleHttpErrors)
-            .then((json) =>
-            {
-                callback(true)
-                setToken(json.token)
-            })
-            .catch((error) =>
-            {
-                if (error.status)
-                {
-                    error.fullError.then(e => console.log(JSON.stringify(e)))
-                } else
-                {
-                    console.log("seriøs fejl", error)
-                }
-            })
     }
 
     const fetchData = (endpoint, method, payload) =>
@@ -89,32 +56,11 @@ function apiFacade()
         return opts;
     }
 
-    const getUserRoles = () =>
-    {
-        const token = getToken()
-        if (token != null)
-        {
-            const payloadBase64 = getToken().split('.')[1]
-            const decodedClaims = JSON.parse(window.atob(payloadBase64))
-            const roles = decodedClaims.roles
-            return roles
-        } else return ""
-    }
-
-    const hasUserAccess = (neededRole, loggedIn) =>
-    {
-        const roles = getUserRoles().split(',')
-        return loggedIn && roles.includes(neededRole)
-    }
 
     return {
         makeOptions,
         setToken,
         getToken,
-        logout,
-        login,
-        getUserRoles,
-        hasUserAccess,
         fetchData
     }
 

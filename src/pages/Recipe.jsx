@@ -11,12 +11,18 @@ function Recipe() {
 
   const handleUpdate = (id) => {
     // Handle the update logic here using the recipe ID
-    console.log(`Update recipe with ID: ${id}`);
+    console.log(`Update recipe with ID: ${recipe.id}`);
   };
 
   const handleDelete = (id) => {
-    // Handle the delete logic here using the recipe ID
-    console.log(`Delete recipe with ID: ${id}`);
+    const updatedRecipes = dataFromServer.filter((recipe) => recipe.id !== id);
+    setDataFromServer(updatedRecipes);
+    facade
+      .fetchData(`recipes/${id}`, "DELETE")
+      .then((response) => {})
+      .catch((error) => {
+        console.error(`Error deleting recipe with ID ${id}:`, error);
+      });
   };
 
   return (
