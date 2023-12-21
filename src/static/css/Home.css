@@ -1,10 +1,8 @@
 
-body,
-h1,
-p {
+body {
   margin: 0;
   padding: 0;
- 
+  background-color: darkblue;
 }
 
 header {
@@ -45,7 +43,6 @@ header {
   font-size: 18px;
   line-height: 1.5;
   color: rgb(0, 0, 0);
-  
   
 }
 

@@ -7,6 +7,7 @@
   background-color: rgb(250, 241, 228); 
   color: rgb(67, 83, 52); 
   padding-bottom: 20px;
+  text-align: center;
 }
 
 .recipes {
@@ -26,13 +27,19 @@
   color: rgb(67, 83, 52); 
 }
 
+.recipeImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .recipeImage img {
   width: 230px;
   height: 230px;
   object-fit: cover;
   border-radius: 5px;
 }
-
+  
 .filterButtons {
   margin-top: 2%;
   display: flex;
