@@ -11,8 +11,8 @@ function Navbar() {
         <Link to="/">
           <img
             src="logo2.png"
-            width="80"
-            height="80"
+            width="120"
+            height="120"
             alt="Logo"
             className="logo-img"
           />
