@@ -9,8 +9,8 @@ function Navbar() {
         <Link to="/">
           <img
             src="logo2.png"
-            width="150"
-            height="150"
+            width="80"
+            height="80"
             alt="Logo"
             className="logo-img"
           />
