@@ -17,6 +17,13 @@ function Recipe() {
   const handleDelete = (id) => {
     const updatedRecipes = dataFromServer.filter((recipe) => recipe.id !== id);
     setDataFromServer(updatedRecipes);
+
+    // Also update filteredRecipes
+    const updatedFilteredRecipes = filteredRecipes.filter(
+      (recipe) => recipe.id !== id
+    );
+    setFilteredRecipes(updatedFilteredRecipes);
+
     facade
       .fetchData(`recipes/${id}`, "DELETE")
       .then((response) => {})
