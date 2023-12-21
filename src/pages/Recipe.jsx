@@ -10,7 +10,7 @@ function Recipe() {
   useEffect(() => {
     facade.fetchData("recipes", "GET").then((data) => {
       setDataFromServer(data);
-      setFilteredRecipes(data); // Initialize filtered recipes with all data
+      setFilteredRecipes(data);
     });
   }, []);
 
@@ -18,7 +18,6 @@ function Recipe() {
     const updatedRecipes = dataFromServer.filter((recipe) => recipe.id !== id);
     setDataFromServer(updatedRecipes);
 
-    // Also update filteredRecipes
     const updatedFilteredRecipes = filteredRecipes.filter(
       (recipe) => recipe.id !== id
     );
@@ -34,7 +33,7 @@ function Recipe() {
 
   const handleFilter = (type) => {
     if (type === "ALL") {
-      setFilteredRecipes(dataFromServer); // Reset to display all recipes
+      setFilteredRecipes(dataFromServer);
     } else {
       const filtered = dataFromServer.filter(
         (recipe) => recipe.recipeType === type
@@ -80,6 +79,9 @@ function Recipe() {
             </ol>
             <div className="buttonContainer">
               <button onClick={() => handleDelete(recipe.id)}>Delete</button>
+              <Link to={`/update/${recipe.id}`}>
+                <button>Update</button>
+              </Link>
             </div>
           </div>
         ))}

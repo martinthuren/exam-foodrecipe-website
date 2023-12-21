@@ -4,9 +4,9 @@ import facade from "../util/apiFacade";
 import "../static/css/UpdateRecipe.css";
 
 function UpdateRecipe() {
-  const { id } = useParams(); // Assuming you're using React Router for URL parameters
+  const { id } = useParams();
   const [recipeData, setRecipeData] = useState({
-    id: id, // Set the ID from URL parameter (assuming it's provided)
+    id: id,
     recipeName: "",
     recipeImg: "",
     recipeDescription: "",
@@ -16,12 +16,13 @@ function UpdateRecipe() {
     recipeDirections: "",
   });
 
+  const [updateSuccess, setUpdateSuccess] = useState(false); // Add this line
+
   useEffect(() => {
-    // Fetch the existing recipe data by ID when the component mounts
     facade.fetchData(`recipes/${id}`, "GET").then((data) => {
       setRecipeData(data);
     });
-  }, [id]);
+  }, [id, updateSuccess]); // Add updateSuccess to the dependency array
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -38,11 +39,10 @@ function UpdateRecipe() {
       .updateRecipe(recipeData.id, recipeData)
       .then((updatedRecipe) => {
         console.log("Recipe updated:", updatedRecipe);
-        // Handle successful update, such as displaying a success message
+        setUpdateSuccess(true); // Set updateSuccess to true after update
       })
       .catch((error) => {
         console.error("Error updating recipe:", error);
-        // Handle error, display an error message or perform necessary actions
       });
   };
 

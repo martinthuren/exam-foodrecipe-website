@@ -48,12 +48,18 @@ function apiFacade() {
 
   };
 
+  const updateRecipe = (id, updatedData) => {
+    const options = makeOptions("PUT", updatedData, true); 
+    return fetch(URL + HOTEL_ROUTE + "/" + id, options).then(handleHttpErrors);
+  };
+
   return {
     makeOptions,
     setToken,
     getToken,
     fetchData,
     createRecipe, 
+    updateRecipe,
   };
 }
 

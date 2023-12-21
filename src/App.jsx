@@ -19,7 +19,7 @@ function App() {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/create-recipe" element={<CreateRecipe />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
-          <Route path="/recipe/:id/update" element={<UpdateRecipe />} />
+          <Route path="/update/:id" element={<UpdateRecipe />} />
         </Routes>
       </div>
     </Router>
