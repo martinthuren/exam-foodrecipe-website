@@ -23,12 +23,12 @@
   border-radius: 5px;
   padding: 10px;
   width: 300px;
-  height: 850px; /* Add a fixed height */
+  height: 850px; 
   background-color: rgb(206, 222, 189); 
   color: rgb(67, 83, 52); 
-  display: flex; /* Add display flex */
-  flex-direction: column; /* Add flex direction column */
-  justify-content: space-between; /* Add justify content space between */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
 }
 
 .recipeImage {
@@ -68,7 +68,7 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
-  width: 100%; /* Add width 100% */
+  width: 100%; 
 }
 
 .buttonContainer button,
