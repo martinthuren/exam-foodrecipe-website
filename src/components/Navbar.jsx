@@ -5,6 +5,8 @@ import "../static/css/Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
+      <div className="nav-section"></div>
+
       <div className="logo-container">
         <Link to="/">
           <img

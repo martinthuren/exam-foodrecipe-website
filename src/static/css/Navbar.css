@@ -1,15 +1,17 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: rgb(250, 241, 228);
   padding: 15px 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container {
+.nav-section,
+.logo-container,
+.nav-links {
+  flex: 1;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .logo-img {
