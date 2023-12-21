@@ -1,4 +1,3 @@
-/* Home.css */
 
 body,
 h1,
@@ -68,7 +67,7 @@ header {
 
 .button {
   padding: 10px 20px;
-  background-color: rgb(67, 83, 52); /* Use the provided color */
+  background-color: rgb(67, 83, 52); 
   color: white;
   border: none;
   border-radius: 5px;

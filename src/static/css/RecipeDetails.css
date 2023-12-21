@@ -1,6 +1,6 @@
 .spacer {
-  padding-top: 50px; /* Adjust the value as needed */
-  background-color: rgb(250, 241, 228); /* Match the color theme */
+  padding-top: 50px;
+  background-color: rgb(250, 241, 228); 
 
 }
 
@@ -9,8 +9,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: rgb(250, 241, 228); /* Match the color theme */
-  color: rgb(67, 83, 52); /* Text color */
+  background-color: rgb(250, 241, 228); 
+  color: rgb(67, 83, 52); 
 }
 
 .recipeDetails {
@@ -18,7 +18,7 @@
   max-width: 800px;
   padding: 20px;
   text-align: center;
-  background-color: rgb(206, 222, 189); /* Use the provided color */
+  background-color: rgb(206, 222, 189);
   border-radius: 5px;
 }
 
@@ -35,4 +35,4 @@
   border-radius: 5px;
   margin-bottom: 20px;
 }
-/* Add additional styling as needed */
+

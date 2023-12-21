@@ -6,6 +6,8 @@ body {
 
 .text-container {
   display: flex;
-  background-color: rgb(250, 241, 228); /* Match the color theme */
+  background-color: rgb(250, 241, 228); 
   padding: 2%;
+
 }
+
