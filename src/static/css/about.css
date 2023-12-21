@@ -1,25 +1,11 @@
-.text-container {
-  display: flex;
-  background-color: white;
-  padding: 40px;
-  margin: 50px;
-  margin-right: 30px;
+body {
+  background-color: rgb(250, 241, 228);
+  margin: 0; 
+  padding: 0; 
 }
 
 .text-container {
-  flex: 1;
-}
-
-.img-container {
-  background-color: #850000;
-  padding: 0;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 15px;
-}
-
-.img-container img {
-  width: 600px;
-  height: 330px;
+  background-color: rgb(250, 241, 228); /* Match the color theme */
+  padding: 2%;
 }

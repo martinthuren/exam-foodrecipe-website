@@ -1,16 +1,16 @@
 .createRecipeContainer {
-  margin-top: 3%;
+  margin-top: 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #242424;
-  color: white;
+  background-color: rgb(255, 239, 217);
+  color: rgb(67, 83, 52);
 }
 
 .createRecipeForm {
   width: 80%;
   max-width: 600px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .createRecipeForm h2 {
@@ -32,15 +32,15 @@
   width: calc(100% - 10px);
   padding: 8px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(158, 179, 132);
   border-radius: 5px;
-  background-color: #fff;
-  color: #333;
+  background-color: rgb(206, 222, 189);
+  color: rgb(67, 83, 52);
 }
 
 .createRecipeForm button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: rgb(158, 179, 132);
   color: white;
   border: none;
   border-radius: 5px;
@@ -48,5 +48,5 @@
 }
 
 .createRecipeForm button:hover {
-  background-color: #45a049;
+  background-color: rgb(206, 222, 189);
 }

@@ -10,7 +10,7 @@ import RecipeDetails from "./pages/RecipeDetails"; // Import the RecipeDetails c
 function App() {
   return (
     <Router>
-      <div className="pt-20">
+      <div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

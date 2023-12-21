@@ -1,35 +1,58 @@
-
-
-
+/* Recipe.css */
 
 .recipeContainer {
-    margin-top: 3%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #242424;
-    color: white;
-  }
-  
-  .recipes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .recipeCard {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    width: 300px;
-  }
-  
-  /* Add this CSS to your existing stylesheet */
-  .recipeImage img {
-    width: 230px; 
-    height: 230px; 
-    object-fit: cover; 
-    border-radius: 5px; 
-  }
-  
+  margin-top: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250, 241, 228); /* Match the color theme */
+  color: rgb(67, 83, 52); /* Text color */
+  padding-bottom: 20px;
+}
+
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.recipeCard {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+  background-color: rgb(206, 222, 189); /* Match the color theme */
+  color: rgb(67, 83, 52); /* Text color */
+}
+
+.recipeImage img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.filterButtons {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between; 
+  width: 50%;
+}
+
+.filterButtons button {
+  padding: 5px 20px;
+  background-color: rgb(158, 179, 132); 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filterButtons button:hover {
+  background-color: rgb(206, 222, 189);
+}
+
+
+

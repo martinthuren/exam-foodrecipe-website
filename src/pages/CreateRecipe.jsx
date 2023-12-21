@@ -40,7 +40,6 @@ function CreateRecipe() {
       })
       .catch((error) => {
         console.error("Error creating recipe:", error);
-        // Handle error if creation fails
       });
   };
 

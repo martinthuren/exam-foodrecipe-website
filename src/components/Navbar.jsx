@@ -15,7 +15,6 @@ function Navbar() {
             className="logo-img"
           />
         </Link>
-        <div className="dot"></div>
       </div>
 
       <div className="nav-links">

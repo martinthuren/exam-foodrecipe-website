@@ -1,5 +1,5 @@
 import React from "react";
-import "../static/css/pages.css";
+import "../static/css/Home.css";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -11,15 +11,6 @@ function Home() {
 
       <main>
         <section class="content">
-          <div class="image-container">
-            <img
-              src="foodhomepage.jpg"
-              width="400"
-              height="150"
-              alt="Logo"
-              className="logo-homepage"
-            />
-          </div>
           <div class="paragraph-container">
             <p>
               Hello and welcome to The Flavourful Duo! Your number one place for

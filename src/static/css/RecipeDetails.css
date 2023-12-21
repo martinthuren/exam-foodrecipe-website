@@ -1,33 +1,38 @@
-/* RecipeDetails.css */
+.spacer {
+  padding-top: 50px; /* Adjust the value as needed */
+  background-color: rgb(250, 241, 228); /* Match the color theme */
+
+}
+
 .recipeDetailsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Set minimum height to the viewport height */
-    background-color: #242424;
-    color: white;
-  }
-  
-  .recipeDetails {
-    width: 80%;
-    max-width: 800px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .recipeDetails h2 {
-    margin-top: 30px;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .recipeDetails img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  /* Add additional styling as needed */
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(250, 241, 228); /* Match the color theme */
+  color: rgb(67, 83, 52); /* Text color */
+}
+
+.recipeDetails {
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(206, 222, 189); /* Use the provided color */
+  border-radius: 5px;
+}
+
+.recipeDetails h2 {
+  margin-top: 30px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recipeDetails img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+/* Add additional styling as needed */

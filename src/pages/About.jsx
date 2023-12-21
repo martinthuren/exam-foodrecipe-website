@@ -21,15 +21,6 @@ function About() {
           you!
         </p>
       </div>
-      <div className="img-container">
-        <img
-          src="jumpingbox.jpg"
-          width="250"
-          height="150"
-          alt="Logo"
-          className="logo-img"
-        />
-      </div>
     </div>
   );
 }

@@ -1,0 +1,75 @@
+/* Home.css */
+
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+header {
+  margin-top: 90px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 0px 0;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  
+}
+
+.image-container {
+  margin-right: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.paragraph-container {
+  max-width: 400px;
+}
+
+.paragraph-container p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
+  
+  
+}
+
+.logo-homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-left: 200px;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: rgb(67, 83, 52); /* Use the provided color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

@@ -21,25 +21,28 @@ function RecipeDetails() {
   }
 
   return (
-    <div className="recipeDetailsContainer">
-      <div className="recipeDetails">
-        <h2>{recipe.recipeName}</h2>
-        <img src={recipe.recipeImg} alt={recipe.recipeName} />
-        <p>{recipe.recipeDescription}</p>
-        <p>Type: {recipe.recipeType}</p>
-        <p>Preparation Time: {recipe.recipePreptime} minutes</p>
-        <h3>Ingredients:</h3>
-        <ul>
-          {recipe.recipeIngredients.split(";").map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>
-        <h3>Directions:</h3>
-        <ol>
-          {recipe.recipeDirections.split(". ").map((step, index) => (
-            <li key={index}>{step}</li>
-          ))}
-        </ol>
+    <div>
+      <div className="spacer"></div>
+      <div className="recipeDetailsContainer">
+        <div className="recipeDetails">
+          <h2>{recipe.recipeName}</h2>
+          <img src={recipe.recipeImg} alt={recipe.recipeName} />
+          <p>{recipe.recipeDescription}</p>
+          <p>Type: {recipe.recipeType}</p>
+          <p>Preparation Time: {recipe.recipePreptime} minutes</p>
+          <h3>Ingredients:</h3>
+          <ul>
+            {recipe.recipeIngredients.split(";").map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+          <h3>Directions:</h3>
+          <ol>
+            {recipe.recipeDirections.split(". ").map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );
