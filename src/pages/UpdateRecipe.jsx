@@ -16,30 +16,30 @@ function UpdateRecipe() {
     recipeDirections: "",
   });
 
-  const [updateSuccess, setUpdateSuccess] = useState(false); // Add this line
-
+  const [updateSuccess, setUpdateSuccess] = useState(false);
   useEffect(() => {
     facade.fetchData(`recipes/${id}`, "GET").then((data) => {
       setRecipeData(data);
     });
-  }, [id, updateSuccess]); // Add updateSuccess to the dependency array
+  }, [id, updateSuccess]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setRecipeData({
-      ...recipeData,
+    console.log(`Changing ${name} to: ${value}`);
+    setRecipeData((prevRecipeData) => ({
+      ...prevRecipeData,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log("Recipe data to be updated:", recipeData);
     facade
       .updateRecipe(recipeData.id, recipeData)
       .then((updatedRecipe) => {
         console.log("Recipe updated:", updatedRecipe);
-        setUpdateSuccess(true); // Set updateSuccess to true after update
+        setUpdateSuccess(true);
       })
       .catch((error) => {
         console.error("Error updating recipe:", error);
@@ -51,31 +51,35 @@ function UpdateRecipe() {
       <h2>Update Recipe</h2>
       <form className="updateRecipeForm" onSubmit={handleSubmit}>
         <label>ID:</label>
+        <input type="text" name="id" value={recipeData.id} disabled />
+        <label>Recipe Name:</label>
         <input
           type="text"
-          name="id"
-          value={recipeData.id}
-          disabled // Disable editing for ID field
+          name="recipeName"
+          value={recipeData.recipeName || ""}
+          onChange={handleInputChange}
+          required
         />
         <label>Recipe Image:</label>
         <input
           type="text"
           name="recipeImg"
-          value={recipeData.recipeImg}
+          value={recipeData.recipeImg || ""}
           onChange={handleInputChange}
           required
         />
+
         <label>Recipe Description:</label>
         <textarea
           name="recipeDescription"
-          value={recipeData.recipeDescription}
+          value={recipeData.recipeDescription || ""}
           onChange={handleInputChange}
           required
         ></textarea>
         <label>Recipe Type:</label>
         <select
           name="recipeType"
-          value={recipeData.recipeType}
+          value={recipeData.recipeType || ""}
           onChange={handleInputChange}
           required
         >
@@ -90,21 +94,21 @@ function UpdateRecipe() {
         <input
           type="number"
           name="recipePreptime"
-          value={recipeData.recipePreptime}
+          value={recipeData.recipePreptime || ""}
           onChange={handleInputChange}
           required
         />
         <label>Recipe Ingredients:</label>
         <textarea
           name="recipeIngredients"
-          value={recipeData.recipeIngredients}
+          value={recipeData.recipeIngredients || ""}
           onChange={handleInputChange}
           required
         ></textarea>
         <label>Recipe Directions:</label>
         <textarea
           name="recipeDirections"
-          value={recipeData.recipeDirections}
+          value={recipeData.recipeDirections || ""}
           onChange={handleInputChange}
           required
         ></textarea>

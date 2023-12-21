@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Recipe from "./pages/Recipe";
 import CreateRecipe from "./pages/CreateRecipe";
-import RecipeDetails from "./pages/RecipeDetails"; // Import the RecipeDetails component
+import RecipeDetails from "./pages/RecipeDetails";
 import UpdateRecipe from "./pages/UpdateRecipe";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/create-recipe" element={<CreateRecipe />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
-          <Route path="/update/:id" element={<UpdateRecipe />} />
+          <Route path="/update-recipe/:id" element={<UpdateRecipe />} />
         </Routes>
       </div>
     </Router>

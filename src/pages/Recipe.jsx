@@ -79,9 +79,7 @@ function Recipe() {
             </ol>
             <div className="buttonContainer">
               <button onClick={() => handleDelete(recipe.id)}>Delete</button>
-              <Link to={`/update/${recipe.id}`}>
-                <button>Update</button>
-              </Link>
+              <Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
             </div>
           </div>
         ))}
