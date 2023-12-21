@@ -36,3 +36,28 @@
   margin-bottom: 20px;
 }
 
+.buttonContainerRecipeDetails {
+  display: flex;
+  margin-top: 0px;
+  width: 100%;
+  background-color: rgb(250, 241, 228);
+  justify-content: flex-start;
+  padding: 0px 20px;
+}
+
+.buttonContainerRecipeDetails button,
+.buttonContainerRecipeDetails a {
+  padding: 5px 20px;
+  background-color: rgb(158, 179, 132);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.buttonContainerRecipeDetails button:hover,
+.buttonContainerRecipeDetails a:hover {
+  background-color: rgb(206, 222, 189);
+}

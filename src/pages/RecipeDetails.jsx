@@ -23,6 +23,15 @@ function RecipeDetails() {
   return (
     <div>
       <div className="spacer"></div>
+      <div className="buttonContainerRecipeDetails">
+        <button
+          onClick={() => {
+            window.history.back();
+          }}
+        >
+          Back
+        </button>
+      </div>
       <div className="recipeDetailsContainer">
         <div className="recipeDetails">
           <h2>{recipe.recipeName}</h2>
