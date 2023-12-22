@@ -10,9 +10,10 @@ function apiFacade() {
     return localStorage.getItem('jwtToken');
   };
 
-  const handleHttpErrors = (res) => {
+  const handleHttpErrors = async (res) => {
     if (!res.ok) {
-      return Promise.reject({ status: res.status, fullError: res.json() });
+      const fullError = await res.json();
+      return Promise.reject({ status: res.status, fullError });
     }
     return res.json();
   };
