@@ -4,7 +4,7 @@ import facade from "../util/apiFacade";
 import "../static/css/UpdateRecipe.css";
 
 function UpdateRecipe() {
-  const { id } = useParams();
+  const { id } = useParams(); //extract id from url
   const [recipeData, setRecipeData] = useState({
     id: id,
     recipeName: "",
